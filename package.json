@@ -1,0 +1,19 @@
+{
+  "name": "material-multi-search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenShalom/material-multi-search.git"
+  },
+  "author": "hen shalom",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HenShalom/material-multi-search/issues"
+  },
+  "homepage": "https://github.com/HenShalom/material-multi-search#readme"
+}
