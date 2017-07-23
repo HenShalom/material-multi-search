@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "babel": "babel --presets es2015,react --watch src/ --out-dir lib"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,16 @@
   "bugs": {
     "url": "https://github.com/HenShalom/material-multi-search/issues"
   },
-  "homepage": "https://github.com/HenShalom/material-multi-search#readme"
+  "homepage": "https://github.com/HenShalom/material-multi-search#readme",
+  "dependencies": {
+    "deep-equal": "^1.0.1",
+    "material-ui": "^0.18.5",
+    "react": "^15.6.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1"
+  }
 }
