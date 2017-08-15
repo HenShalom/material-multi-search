@@ -1,6 +1,6 @@
 {
   "name": "material-multi-search",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,10 @@
     "type": "git",
     "url": "git+https://github.com/HenShalom/material-multi-search.git"
   },
-  "author": "hen shalom",
+  "author": {
+    "name": "Hen Shalom",
+    "email": "chenshalom2242@gmail.com"
+  },
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/HenShalom/material-multi-search/issues"

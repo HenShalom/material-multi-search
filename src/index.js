@@ -7,7 +7,6 @@ import RaisedButton from 'material-ui/RaisedButton'
 class MultiSearch extends Component {
     constructor(props, context) {
         super(props, context)
-        console.log(props.data)
         this.state = {
             hinText: props.hinText,
             maxResult: props.maxResult,
@@ -23,7 +22,6 @@ class MultiSearch extends Component {
 
     dataDicider(data, converter) {
         if (typeof (data[0]) === "object") {
-            console.log("this is an object list")
             return this.mangedData(data, converter)
         } else {
             return data
@@ -65,14 +63,13 @@ class MultiSearch extends Component {
     }
 
     handleListClick(index) {
-        console.log(index)
         this.setState((prevState) => {
             return { selectedItem: this.removeElmentAt(prevState.selectedItem, index), selectedItemConvereted: this.removeElmentAt(prevState.selectedItemConvereted, index) }
         })
     }
     removeElmentAt(arr, index) {
         let len = arr.length
-        let newArr=[];
+        let newArr = [];
         for (let i = 0; i < len; i++) {
             if (i !== index) {
                 newArr.push(arr[i])
@@ -80,7 +77,17 @@ class MultiSearch extends Component {
         }
         return newArr
     }
-
+    diffArray(arrayOne, arrayTwo) {
+        arrayTwo.forEach(function (element) {
+            for (let i in arrayOne){
+                if(equal(arrayOne[i],element)){
+                    arrayOne.splice(i,1);
+                    break;
+                }
+            }
+        }, this);
+        return arrayOne;
+    }
     render() {
 
         return (
@@ -92,7 +99,7 @@ class MultiSearch extends Component {
                 <AutoComplete
                     floatingLabelText={this.state.hinText}
                     filter={AutoComplete.caseInsensitiveFilter}
-                    dataSource={this.state.data}
+                    dataSource={this.diffArray(this.state.data, this.state.selectedItemConvereted)}
                     maxSearchResults={this.state.maxResult}
                     onNewRequest={this.handleItemChange}
                     fullWidth={true}
